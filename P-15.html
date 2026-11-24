@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parent and Child Scope</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <div ng-controller="ParentController">
+
+        <h2>Parent Scope</h2>
+        <p>{{message}}</p>
+
+        <div ng-controller="ChildController">
+
+            <h2>Child Scope</h2>
+            <p>{{message}}</p>
+
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("ParentController", function($scope) {
+            $scope.message = "Message from Parent";
+        });
+
+        app.controller("ChildController", function($scope) {
+            $scope.message = "Message from Child";
+        });
+    </script>
+
+</body>
+</html>

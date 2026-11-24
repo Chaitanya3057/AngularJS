@@ -1,0 +1,32 @@
+
+<div ng-app="myApp" ng-controller="MyController">
+
+    <p>Today: {{today | date:'dd-MM-yyyy'}}</p>
+
+    <h3>Students</h3>
+
+    <ul>
+        <li ng-repeat="student in students | orderBy:'name'">
+            {{student.name}}
+        </li>
+    </ul>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+<script>
+var app = angular.module("myApp", []);
+
+app.controller("MyController", function($scope) {
+
+    $scope.today = new Date();
+
+    $scope.students = [
+        {name: "Chaitanya"},
+        {name: "Rahul"},
+        {name: "Amit"},
+    ];
+
+});
+</script>

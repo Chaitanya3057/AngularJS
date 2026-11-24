@@ -1,0 +1,12 @@
+<div ng-app="myApp" ng-controller="MyController">
+<button ng-click="showAlert()">Show Alert</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script>
+var app = angular.module("myApp", []);
+app.controller("MyController", function($scope, $window) {
+$scope.showAlert = function() {
+$window.alert("Welcome to AngularJS!");
+};
+});
+</script>
